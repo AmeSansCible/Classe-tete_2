@@ -9,7 +9,7 @@ class MyApp(QMainWindow):
         super(MyApp, self).__init__()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
-        # Crée un bouton pour ouvrir la fenêtre 2
+        # Utilise le bouton "Liste et contraintes" pour ouvrir la window2
         self.ui.Bouton_ListeContraintes.clicked.connect(self.open_window2)
 
         # Initialisation de la fenêtre 2

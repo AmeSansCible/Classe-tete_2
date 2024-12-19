@@ -12,6 +12,9 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 
 
 class Ui_Window2(object):
+    def __init__(self):
+        super().__init__()
+        self.student_counter = 1
     def setupUi(self, Window2):
         Window2.setObjectName("Window2")
         Window2.resize(800, 600)
@@ -31,6 +34,7 @@ class Ui_Window2(object):
         self.Text_Prenom1 = QtWidgets.QTextEdit(self.centralwidget)
         self.Text_Prenom1.setGeometry(QtCore.QRect(40, 70, 111, 31))
         self.Text_Prenom1.setObjectName("Text_Prenom1")
+        self.Text_Prenom1.setPlaceholderText('Prénom')
         self.Titre_Prenom = QtWidgets.QLabel(self.centralwidget)
         self.Titre_Prenom.setGeometry(QtCore.QRect(60, 50, 47, 13))
         self.Titre_Prenom.setObjectName("Titre_Prenom")
@@ -40,6 +44,7 @@ class Ui_Window2(object):
         self.Text_Nom1 = QtWidgets.QTextEdit(self.centralwidget)
         self.Text_Nom1.setGeometry(QtCore.QRect(170, 70, 111, 31))
         self.Text_Nom1.setObjectName("Text_Nom1")
+        self.Text_Nom1.setPlaceholderText('Nom')
         self.Titre_Eleve = QtWidgets.QLabel(self.centralwidget)
         self.Titre_Eleve.setGeometry(QtCore.QRect(420, 50, 47, 13))
         self.Titre_Eleve.setObjectName("Titre_Eleve")
@@ -58,6 +63,7 @@ class Ui_Window2(object):
         self.Bouton_AjouterEleve = QtWidgets.QPushButton(self.centralwidget)
         self.Bouton_AjouterEleve.setGeometry(QtCore.QRect(10, 50, 31, 21))
         self.Bouton_AjouterEleve.setObjectName("Bouton_AjouterEleve")
+        self.Bouton_AjouterEleve.clicked.connect(self.add_student_row)
         self.Bouton_AjouterContrainte = QtWidgets.QPushButton(self.centralwidget)
         self.Bouton_AjouterContrainte.setGeometry(QtCore.QRect(370, 70, 31, 21))
         self.Bouton_AjouterContrainte.setObjectName("Bouton_AjouterContrainte")
@@ -85,3 +91,23 @@ class Ui_Window2(object):
         self.Num_1.setText(_translate("Window2", "1"))
         self.Bouton_AjouterEleve.setText(_translate("Window2", "+"))
         self.Bouton_AjouterContrainte.setText(_translate("Window2", "+"))
+
+    def add_student_row(self):
+        #Augmente le compteur
+        self.student_counter += 1
+
+        #Calcule la position de la nouvelle ligne, décalage vertical de la ligne
+        y_offset = 70 + (self.student_counter - 1) * 50
+
+        #Création des widgets
+
+        #Numéro de l'élève
+        Num = QtWidgets.QLabel(self.centralwidget)
+        Num.setGeometry(QtCore.QRect(20, y_offset, 16, 16))
+        Num.setObjectName(f"Num_[{self.student_counter}")
+        Num.setText(str(self.student_counter))
+        Num.show()
+
+        #Input prénom
+
+        #Input Nom
