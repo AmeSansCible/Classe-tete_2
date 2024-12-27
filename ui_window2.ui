@@ -17,20 +17,20 @@
    <widget class="QLabel" name="Titre_Liste">
     <property name="geometry">
      <rect>
-      <x>50</x>
+      <x>110</x>
       <y>10</y>
-      <width>41</width>
+      <width>111</width>
       <height>16</height>
      </rect>
     </property>
     <property name="text">
-     <string>Liste</string>
+     <string>Liste de classe</string>
     </property>
    </widget>
    <widget class="Line" name="line">
     <property name="geometry">
      <rect>
-      <x>353</x>
+      <x>400</x>
       <y>0</y>
       <width>20</width>
       <height>551</height>
@@ -43,7 +43,7 @@
    <widget class="QLabel" name="Titre_Contraintes">
     <property name="geometry">
      <rect>
-      <x>400</x>
+      <x>550</x>
       <y>10</y>
       <width>81</width>
       <height>16</height>
@@ -63,32 +63,6 @@
      </rect>
     </property>
    </widget>
-   <widget class="QLabel" name="Titre_Prenom">
-    <property name="geometry">
-     <rect>
-      <x>60</x>
-      <y>50</y>
-      <width>47</width>
-      <height>13</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Prénom</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="Titre_Nom">
-    <property name="geometry">
-     <rect>
-      <x>200</x>
-      <y>50</y>
-      <width>47</width>
-      <height>13</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Nom</string>
-    </property>
-   </widget>
    <widget class="QTextEdit" name="Text_Nom1">
     <property name="geometry">
      <rect>
@@ -99,50 +73,14 @@
      </rect>
     </property>
    </widget>
-   <widget class="QLabel" name="Titre_Eleve">
-    <property name="geometry">
-     <rect>
-      <x>420</x>
-      <y>50</y>
-      <width>47</width>
-      <height>13</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Elève</string>
-    </property>
-   </widget>
-   <widget class="QSpinBox" name="Menu_Eleve">
-    <property name="geometry">
-     <rect>
-      <x>420</x>
-      <y>70</y>
-      <width>111</width>
-      <height>22</height>
-     </rect>
-    </property>
-   </widget>
    <widget class="QSpinBox" name="Menu_Contrainte">
     <property name="geometry">
      <rect>
-      <x>550</x>
+      <x>460</x>
       <y>70</y>
       <width>121</width>
       <height>22</height>
      </rect>
-    </property>
-   </widget>
-   <widget class="QLabel" name="Titre_Contrainte">
-    <property name="geometry">
-     <rect>
-      <x>550</x>
-      <y>50</y>
-      <width>81</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Contrainte</string>
     </property>
    </widget>
    <widget class="QLabel" name="Num_1">
@@ -161,8 +99,8 @@
    <widget class="QPushButton" name="Bouton_AjouterEleve">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>50</y>
+      <x>150</x>
+      <y>40</y>
       <width>31</width>
       <height>21</height>
      </rect>
@@ -174,14 +112,79 @@
    <widget class="QPushButton" name="Bouton_AjouterContrainte">
     <property name="geometry">
      <rect>
-      <x>370</x>
+      <x>420</x>
       <y>70</y>
-      <width>31</width>
+      <width>16</width>
       <height>21</height>
      </rect>
     </property>
     <property name="text">
      <string>+</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Bouton_SupprimerEleve_2">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>40</y>
+      <width>31</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>-</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="Titre_Boutons">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>40</y>
+      <width>131</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Ajouter/enlever un élève</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Bouton_AjouterContrainte_2">
+    <property name="geometry">
+     <rect>
+      <x>440</x>
+      <y>70</y>
+      <width>16</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>-</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="radioButton_Fille">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>80</y>
+      <width>41</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Fille</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="radioButton_Garcon">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>80</y>
+      <width>61</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Garçon</string>
     </property>
    </widget>
   </widget>

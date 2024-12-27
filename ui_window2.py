@@ -15,58 +15,88 @@ class Ui_Window2(object):
     def __init__(self):
         super().__init__()
         self.student_counter = 1
+        self.student_widgets = []
+
     def setupUi(self, Window2):
         Window2.setObjectName("Window2")
         Window2.resize(800, 600)
         self.centralwidget = QtWidgets.QWidget(Window2)
         self.centralwidget.setObjectName("centralwidget")
+
         self.Titre_Liste = QtWidgets.QLabel(self.centralwidget)
-        self.Titre_Liste.setGeometry(QtCore.QRect(50, 10, 41, 16))
+        self.Titre_Liste.setGeometry(QtCore.QRect(110, 10, 111, 16))
         self.Titre_Liste.setObjectName("Titre_Liste")
+
         self.line = QtWidgets.QFrame(self.centralwidget)
-        self.line.setGeometry(QtCore.QRect(353, 0, 20, 551))
+        self.line.setGeometry(QtCore.QRect(400, 0, 20, 551))
         self.line.setFrameShape(QtWidgets.QFrame.VLine)
         self.line.setFrameShadow(QtWidgets.QFrame.Sunken)
         self.line.setObjectName("line")
+
         self.Titre_Contraintes = QtWidgets.QLabel(self.centralwidget)
-        self.Titre_Contraintes.setGeometry(QtCore.QRect(400, 10, 81, 16))
+        self.Titre_Contraintes.setGeometry(QtCore.QRect(550, 10, 81, 16))
         self.Titre_Contraintes.setObjectName("Titre_Contraintes")
+
         self.Text_Prenom1 = QtWidgets.QTextEdit(self.centralwidget)
         self.Text_Prenom1.setGeometry(QtCore.QRect(40, 70, 111, 31))
         self.Text_Prenom1.setObjectName("Text_Prenom1")
         self.Text_Prenom1.setPlaceholderText('Prénom')
-        self.Titre_Prenom = QtWidgets.QLabel(self.centralwidget)
-        self.Titre_Prenom.setGeometry(QtCore.QRect(60, 50, 47, 13))
-        self.Titre_Prenom.setObjectName("Titre_Prenom")
-        self.Titre_Nom = QtWidgets.QLabel(self.centralwidget)
-        self.Titre_Nom.setGeometry(QtCore.QRect(200, 50, 47, 13))
-        self.Titre_Nom.setObjectName("Titre_Nom")
+
         self.Text_Nom1 = QtWidgets.QTextEdit(self.centralwidget)
         self.Text_Nom1.setGeometry(QtCore.QRect(170, 70, 111, 31))
         self.Text_Nom1.setObjectName("Text_Nom1")
         self.Text_Nom1.setPlaceholderText('Nom')
-        self.Titre_Eleve = QtWidgets.QLabel(self.centralwidget)
-        self.Titre_Eleve.setGeometry(QtCore.QRect(420, 50, 47, 13))
-        self.Titre_Eleve.setObjectName("Titre_Eleve")
-        self.Menu_Eleve = QtWidgets.QSpinBox(self.centralwidget)
-        self.Menu_Eleve.setGeometry(QtCore.QRect(420, 70, 111, 22))
-        self.Menu_Eleve.setObjectName("Menu_Eleve")
+
         self.Menu_Contrainte = QtWidgets.QSpinBox(self.centralwidget)
-        self.Menu_Contrainte.setGeometry(QtCore.QRect(550, 70, 121, 22))
+        self.Menu_Contrainte.setGeometry(QtCore.QRect(460, 70, 121, 22))
         self.Menu_Contrainte.setObjectName("Menu_Contrainte")
-        self.Titre_Contrainte = QtWidgets.QLabel(self.centralwidget)
-        self.Titre_Contrainte.setGeometry(QtCore.QRect(550, 50, 81, 16))
-        self.Titre_Contrainte.setObjectName("Titre_Contrainte")
+
         self.Num_1 = QtWidgets.QLabel(self.centralwidget)
         self.Num_1.setGeometry(QtCore.QRect(20, 80, 16, 16))
         self.Num_1.setObjectName("Num_1")
+
+        # Bouton qui rajoute une ligne d'élève
         self.Bouton_AjouterEleve = QtWidgets.QPushButton(self.centralwidget)
-        self.Bouton_AjouterEleve.setGeometry(QtCore.QRect(10, 50, 31, 21))
+        self.Bouton_AjouterEleve.setGeometry(QtCore.QRect(150, 40, 31, 21))
         self.Bouton_AjouterEleve.setObjectName("Bouton_AjouterEleve")
         self.Bouton_AjouterEleve.clicked.connect(self.add_student_row)
+
         self.Bouton_AjouterContrainte = QtWidgets.QPushButton(self.centralwidget)
-        self.Bouton_AjouterContrainte.setGeometry(QtCore.QRect(370, 70, 31, 21))
+        self.Bouton_AjouterContrainte.setGeometry(QtCore.QRect(420, 70, 16, 21))
         self.Bouton_AjouterContrainte.setObjectName("Bouton_AjouterContrainte")
+
+        #Bouton pour supprimer une ligne d'élève
+        self.Bouton_SupprimerEleve = QtWidgets.QPushButton(self.centralwidget)
+        self.Bouton_SupprimerEleve.setGeometry(QtCore.QRect(180, 40, 31, 21))
+        self.Bouton_SupprimerEleve.setObjectName("Bouton_SupprimerEleve")
+        self.Bouton_SupprimerEleve.clicked.connect(self.remove_last_student_row)
+
+        self.Titre_Boutons = QtWidgets.QLabel(self.centralwidget)
+        self.Titre_Boutons.setGeometry(QtCore.QRect(20, 40, 131, 16))
+        self.Titre_Boutons.setObjectName("Titre_Boutons")
+
+        self.Bouton_SupprimerContrainte = QtWidgets.QPushButton(self.centralwidget)
+        self.Bouton_SupprimerContrainte.setGeometry(QtCore.QRect(440, 70, 16, 21))
+        self.Bouton_SupprimerContrainte.setObjectName("Bouton_AjouterContrainte")
+
+        self.radioButton_Fille1 = QtWidgets.QRadioButton(self.centralwidget)
+        self.radioButton_Fille1.setGeometry(QtCore.QRect(290, 80, 41, 17))
+        self.radioButton_Fille1.setObjectName("radioButton_Fille")
+
+        self.radioButton_Garcon1 = QtWidgets.QRadioButton(self.centralwidget)
+        self.radioButton_Garcon1.setGeometry(QtCore.QRect(330, 80, 61, 17))
+        self.radioButton_Garcon1.setObjectName("radioButton_Garcon")
+
+        # Création du QButtonGroup
+        self.gender_group1 = QtWidgets.QButtonGroup(self.centralwidget)
+
+        # Ajout des radio buttons au groupe
+        self.gender_group1.addButton(self.radioButton_Fille1)
+        self.gender_group1.addButton(self.radioButton_Garcon1)
+
+        # Le mode exclusif (tu peux en sélectionner qu'un)
+        self.gender_group1.setExclusive(True)
+
         Window2.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(Window2)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 21))
@@ -82,16 +112,18 @@ class Ui_Window2(object):
     def retranslateUi(self, Window2):
         _translate = QtCore.QCoreApplication.translate
         Window2.setWindowTitle(_translate("Window2", "Liste et contraintes"))
-        self.Titre_Liste.setText(_translate("Window2", "Liste"))
+        self.Titre_Liste.setText(_translate("Window2", "Liste de classe"))
         self.Titre_Contraintes.setText(_translate("Window2", "Contraintes"))
-        self.Titre_Prenom.setText(_translate("Window2", "Prénom"))
-        self.Titre_Nom.setText(_translate("Window2", "Nom"))
-        self.Titre_Eleve.setText(_translate("Window2", "Elève"))
-        self.Titre_Contrainte.setText(_translate("Window2", "Contrainte"))
         self.Num_1.setText(_translate("Window2", "1"))
         self.Bouton_AjouterEleve.setText(_translate("Window2", "+"))
         self.Bouton_AjouterContrainte.setText(_translate("Window2", "+"))
+        self.Bouton_SupprimerEleve.setText(_translate("Window2", "-"))
+        self.Titre_Boutons.setText(_translate("Window2", "Ajouter/Enlever un élève"))
+        self.Bouton_SupprimerContrainte.setText(_translate("Window2", "-"))
+        self.radioButton_Fille1.setText(_translate("Window2", "Fille"))
+        self.radioButton_Garcon1.setText(_translate("Window2", "Garçon"))
 
+#Fonction pour ajouter une ligne d'élève
     def add_student_row(self):
         #Augmente le compteur
         self.student_counter += 1
@@ -100,7 +132,6 @@ class Ui_Window2(object):
         y_offset = 70 + (self.student_counter - 1) * 50
 
         #Création des widgets
-
         #Numéro de l'élève
         Num = QtWidgets.QLabel(self.centralwidget)
         Num.setGeometry(QtCore.QRect(20, y_offset, 16, 16))
@@ -109,5 +140,53 @@ class Ui_Window2(object):
         Num.show()
 
         #Input prénom
+        Text_Prenom = QtWidgets.QTextEdit(self.centralwidget)
+        Text_Prenom.setGeometry(QtCore.QRect(40, y_offset - 10, 111, 31))
+        Text_Prenom.setObjectName(f"Text_Prenom{self.student_counter}")
+        Text_Prenom.setPlaceholderText('Prénom')
+        Text_Prenom.show()
 
-        #Input Nom
+        #Input nom
+        Text_Nom = QtWidgets.QTextEdit(self.centralwidget)
+        Text_Nom.setGeometry(QtCore.QRect(170, y_offset - 10, 111, 31))
+        Text_Nom.setObjectName(f"Text_Nom{self.student_counter}")
+        Text_Nom.setPlaceholderText('Nom')
+        Text_Nom.show()
+
+        #Radio box fille/garçon
+        radioButton_Fille = QtWidgets.QRadioButton(self.centralwidget)
+        radioButton_Fille.setGeometry(QtCore.QRect(290, y_offset - 10, 41, 17))
+        radioButton_Fille.setObjectName(f"radioButton_Fille{self.student_counter}")
+        radioButton_Fille.setText("Fille")
+        radioButton_Fille.show()
+
+        radioButton_Garcon = QtWidgets.QRadioButton(self.centralwidget)
+        radioButton_Garcon.setGeometry(QtCore.QRect(330, y_offset - 10, 61, 17))
+        radioButton_Garcon.setObjectName(f"radioButton_Garcon{self.student_counter}")
+        radioButton_Garcon.setText("Garçon")
+        radioButton_Garcon.show()
+
+        # Création du QButtonGroup pour la ligne
+        gender_group = QtWidgets.QButtonGroup(self.centralwidget)
+        gender_group.addButton(radioButton_Fille)
+        gender_group.addButton(radioButton_Garcon)
+        gender_group.setExclusive(True)  # Assure que seule une option est sélectionnable
+
+        #Enregistre les élèves dans une liste
+        self.student_widgets.append({
+            "Num": Num,
+            "Text_Prenom": Text_Prenom,
+            "Text_Nom": Text_Nom,
+            "radioButton_Fille": radioButton_Fille,
+            "radioButton_Garcon": radioButton_Garcon,
+            "gender_group": gender_group
+        })
+
+#Fonction qui supprime la dernière ligne d'élève créée
+    def remove_last_student_row(self):
+        if self.student_counter > 1:
+            last_widgets = self.student_widgets.pop()
+            for widget in last_widgets.values():
+                widget.setParent(None) #Supprime le widget du parent pour éviter de supprimer tout le parent
+                widget.deleteLater()
+            self.student_counter -= 1
