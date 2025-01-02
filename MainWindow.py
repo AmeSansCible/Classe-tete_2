@@ -62,19 +62,23 @@ class Ui_MainWindow(object):
         self.tableWidget_9.setObjectName("tableWidget_9")
         self.tableWidget_9.setColumnCount(0)
         self.tableWidget_9.setRowCount(0)
+
         self.line = QtWidgets.QFrame(self.centralwidget)
         self.line.setGeometry(QtCore.QRect(600, 0, 16, 551))
         self.line.setFrameShape(QtWidgets.QFrame.VLine)
         self.line.setFrameShadow(QtWidgets.QFrame.Sunken)
         self.line.setObjectName("line")
+
         self.Titre_Classe = QtWidgets.QLabel(self.centralwidget)
         self.Titre_Classe.setGeometry(QtCore.QRect(670, 10, 47, 13))
         self.Titre_Classe.setObjectName("Titre_Classe")
+
         self.line_2 = QtWidgets.QFrame(self.centralwidget)
         self.line_2.setGeometry(QtCore.QRect(610, 250, 191, 16))
         self.line_2.setFrameShape(QtWidgets.QFrame.HLine)
         self.line_2.setFrameShadow(QtWidgets.QFrame.Sunken)
         self.line_2.setObjectName("line_2")
+
         self.Titre_Plan = QtWidgets.QLabel(self.centralwidget)
         self.Titre_Plan.setGeometry(QtCore.QRect(670, 270, 47, 13))
         self.Titre_Plan.setObjectName("Titre_Plan")
@@ -82,30 +86,52 @@ class Ui_MainWindow(object):
         self.Bouton_FilleGarcon = QtWidgets.QRadioButton(self.centralwidget)
         self.Bouton_FilleGarcon.setGeometry(QtCore.QRect(620, 300, 82, 17))
         self.Bouton_FilleGarcon.setObjectName("Bouton_FilleGarcon")
+
         self.Bouton_Niveaux = QtWidgets.QRadioButton(self.centralwidget)
         self.Bouton_Niveaux.setGeometry(QtCore.QRect(620, 320, 131, 17))
         self.Bouton_Niveaux.setObjectName("Bouton_Niveaux")
+
         self.Bouton_Contraintes = QtWidgets.QRadioButton(self.centralwidget)
         self.Bouton_Contraintes.setGeometry(QtCore.QRect(620, 340, 82, 17))
         self.Bouton_Contraintes.setObjectName("Bouton_Contraintes")
+
         self.Bouton_Aleatoire = QtWidgets.QRadioButton(self.centralwidget)
         self.Bouton_Aleatoire.setGeometry(QtCore.QRect(620, 360, 82, 17))
         self.Bouton_Aleatoire.setObjectName("Bouton_Aleatoire")
+
+        # Création du QButtonGroup
+        self.plan_group1 = QtWidgets.QButtonGroup(self.centralwidget)
+
+        # Ajout des radio buttons au groupe
+        self.plan_group1.addButton(self.Bouton_FilleGarcon)
+        self.plan_group1.addButton(self.Bouton_Niveaux)
+        self.plan_group1.addButton(self.Bouton_Contraintes)
+        self.plan_group1.addButton(self.Bouton_Aleatoire)
+
+        # Le mode exclusif (tu peux en sélectionner qu'un)
+        self.plan_group1.setExclusive(True)
+
+
         self.Bouton_Add_Tables = QtWidgets.QPushButton(self.centralwidget)
         self.Bouton_Add_Tables.setGeometry(QtCore.QRect(640, 50, 75, 23))
         self.Bouton_Add_Tables.setObjectName("Bouton_Add_Tables")
+
         self.Bouton_Modif = QtWidgets.QPushButton(self.centralwidget)
         self.Bouton_Modif.setGeometry(QtCore.QRect(640, 80, 75, 23))
         self.Bouton_Modif.setObjectName("Bouton_Modif")
+
         self.Bouton_ListeContraintes = QtWidgets.QPushButton(self.centralwidget)
         self.Bouton_ListeContraintes.setGeometry(QtCore.QRect(640, 120, 131, 23))
         self.Bouton_ListeContraintes.setObjectName("Bouton_ListeContraintes")
+
         self.Bouton_Generer = QtWidgets.QPushButton(self.centralwidget)
         self.Bouton_Generer.setGeometry(QtCore.QRect(640, 400, 111, 41))
         self.Bouton_Generer.setObjectName("Bouton_Generer")
+
         self.Bouton_Exporter = QtWidgets.QPushButton(self.centralwidget)
         self.Bouton_Exporter.setGeometry(QtCore.QRect(640, 500, 111, 41))
         self.Bouton_Exporter.setObjectName("Bouton_Exporter")
+
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 21))

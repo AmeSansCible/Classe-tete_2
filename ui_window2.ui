@@ -122,7 +122,7 @@
      <string>+</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="Bouton_SupprimerEleve_2">
+   <widget class="QPushButton" name="Bouton_SupprimerEleve">
     <property name="geometry">
      <rect>
       <x>180</x>
@@ -148,7 +148,7 @@
      <string>Ajouter/enlever un élève</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="Bouton_AjouterContrainte_2">
+   <widget class="QPushButton" name="Bouton_SupprimerContrainte">
     <property name="geometry">
      <rect>
       <x>440</x>
